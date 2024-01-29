@@ -40,7 +40,7 @@ def prompt_endpoint():
     bedrock = boto3.client(service_name='bedrock-runtime')
     body = json.dumps({
         "prompt": f"\n\n{prompt}\n\nAssistant:",
-        "max_tokens_to_sample": 1000,
+        "max_tokens_to_sample": 300,
         "temperature": 0.05,
         "top_p": 0.8,
     })
