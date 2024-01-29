@@ -2,6 +2,15 @@ from flask import Flask, request, jsonify
 import boto3
 import json
 import os
+from dotenv import load_dotenv
+
+# Load environment variables from .env file
+load_dotenv()
+
+# Now you can access the variables using os.environ
+AWS_ACCESS_KEY_ID = os.environ.get('AWS_ACCESS_KEY_ID')
+AWS_SECRET_ACCESS_KEY = os.environ.get('AWS_SECRET_ACCESS_KEY')
+region_name = os.environ.get('REGION_NAME')
 
 app = Flask(__name__)
 
@@ -19,8 +28,6 @@ def prompt_endpoint():
     print('prompt')
     print(prompt)
     # Your existing function
-    AWS_ACCESS_KEY_ID = 'AKIA2UC3FQM4PHSGWLMX'
-    AWS_SECRET_ACCESS_KEY = 'r65soHz4zLPgVTsQyVtfTLpr92Di10YxEEPpmmV0'
     REGION_NAME = 'us-west-2'
     if not prompt.startswith("Human:"):
         prompt = "Human: " + prompt
