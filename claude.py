@@ -5,6 +5,10 @@ import os
 
 app = Flask(__name__)
 
+@app.route('/status', methods=['GET'])
+def status_endpoint():
+    return jsonify({'status': 'Server is live'})
+
 @app.route('/prompt', methods=['POST'])
 def prompt_endpoint():
     # Get the prompt from the request data
