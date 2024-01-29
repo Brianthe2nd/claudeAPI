@@ -40,9 +40,9 @@ def prompt_endpoint():
     bedrock = boto3.client(service_name='bedrock-runtime')
     body = json.dumps({
         "prompt": f"\n\n{prompt}\n\nAssistant:",
-        "max_tokens_to_sample": 2000,
-        "temperature": 0.1,
-        "top_p": 0.9,
+        "max_tokens_to_sample": 1000,
+        "temperature": 0.05,
+        "top_p": 0.8,
     })
     modelId = 'anthropic.claude-instant-v1'
     accept = 'application/json'
