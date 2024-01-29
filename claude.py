@@ -13,8 +13,11 @@ def status_endpoint():
 def prompt_endpoint():
     # Get the prompt from the request data
     data = request.get_json()
+    print('data')
+    print(data)
     prompt = data.get('prompt')
-
+    print('prompt')
+    print(prompt)
     # Your existing function
     AWS_ACCESS_KEY_ID = 'AKIA2UC3FQM4PHSGWLMX'
     AWS_SECRET_ACCESS_KEY = 'r65soHz4zLPgVTsQyVtfTLpr92Di10YxEEPpmmV0'
