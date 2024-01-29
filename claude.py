@@ -5,7 +5,7 @@ import os
 
 app = Flask(__name__)
 
-@app.route('/status', methods=['GET'])
+@app.route('/', methods=['GET'])
 def status_endpoint():
     return jsonify({'status': 'Server is live'})
 
