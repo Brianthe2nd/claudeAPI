@@ -25,7 +25,7 @@ def prompt_endpoint():
     data = request.get_json()
     print('data')
     print(data)
-    description = data.get('Description')
+    description = data.get('prompt')
     print('description')
     print(description)
     # Extract and process query parameters from the URL
