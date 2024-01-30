@@ -3,6 +3,7 @@ import boto3
 import json
 import os
 from dotenv import load_dotenv
+from urllib.parse import parse_qs
 
 # Load environment variables from .env file
 load_dotenv()
