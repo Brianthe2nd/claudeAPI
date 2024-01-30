@@ -24,7 +24,20 @@ def prompt_endpoint():
     data = request.get_json()
     print('data')
     print(data)
-    prompt = data.get('prompt')
+    description = data.get('Description')
+    print('description')
+    print(description)
+    # Extract and process query parameters from the URL
+    query_string = request.url.split('?', 1)[-1]
+    query_parameters = parse_qs(query_string)
+    if 'prompt' in query_parameters:
+        quiz = query_parameters['prompt'][0]
+    else:
+        quiz = None 
+    # both quiz and the description are strings
+    print('quiz')
+    print(quiz)    
+    prompt = quiz + description
     print('prompt')
     print(prompt)
     # Your existing function
